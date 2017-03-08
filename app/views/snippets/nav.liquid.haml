@@ -1,0 +1,19 @@
+%nav#top-hea.row.navbar.navbar-blue.navbar-static-top{:role => "navigation", :style => "margin-bottom: 0; min-width: 101%;position: fixed; height: 90px;"}
+  %center
+    .navbar-logo
+      #navbar-id.navbar-brand
+        %a
+          %img{:alt => "Logo menu", :src => "/images/img/logo_menu.png"}/
+        /
+          <a style="color:white; font-size:14px; padding-right:30px">
+          Testing environment
+          </a>
+  %ul#top-nav.nav.navbar-top-links.navbar-right.nav-top-75
+    %li.false
+      %label.col-sm-4.control-label{:for => "", :style => "padding-top: 25px; text-align: right"} Language
+      .col-sm-8{:style => "padding-top: 20px"}
+        .input-group
+          %select#multi-languages.form-control{:name => "multi-languages", :style => "height:35px; width:auto;"}
+            %option{:value => "da-DK"} da-DK/ Danish - Denmark
+            %option{:selected => "selected", :value => "en-GB"} en-GB/ English - United Kingdom
+            %option{:value => "en-US"} en-US/ English - United States
