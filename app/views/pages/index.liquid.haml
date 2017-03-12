@@ -79,13 +79,17 @@ handle: home
               .row{:style => "padding-bottom: 10px; padding-top: 50px;"}
                 .col-lg-8.col-md-offset-2
                   .col-lg-4
-                    %img.img-responsive{:alt => "some_text", :src => "/images/PDL_Why.png"}/
+                    <img class="img-responsive" src="{{ 'PDL_Why.png' | theme_image_url }}" alt="" />
                   .col-lg-8
                     .home-block
                       .panel-heading.padding-left-0
+                        {% editable_text head1%}
                         %b Why choose Product Data Lake?
+                        {% endeditable_text %}
                       .panel-body.padding-left-0
+                        {% editable_text body1%}
                         %p Sharing product data within business eco-systems has grown dramatically during the last years driven by the increased use of ecommerce. Product Data Lake helps business partners sharing their product data quick, accurate and easy.
+                        {% endeditable_text %}
                         %a#reason-of-being-icon{"data-toggle" => "page", :onclick => "showReason()", :style => "cursor: pointer;"}
                           %i.lnr.lnr-plus-circle
                           Learn More
