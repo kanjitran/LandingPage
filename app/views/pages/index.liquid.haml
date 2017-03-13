@@ -3,7 +3,7 @@ title: Home page
 published: true
 handle: home
 ---
-{% extends 'layouts/simple' %}
+//{% extends 'layouts/simple' %}
 
 {% block content/main %}
 %html
@@ -14,7 +14,7 @@ handle: home
     %title Product Data Lake | Landing Page
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
     / Tell the browser to be responsive to screen width
-    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, , shrink-to-fit=no", :name => "viewport"}/
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no", :name => "viewport"}/
     :javascript
       var App = {};
       
@@ -63,14 +63,17 @@ handle: home
                 .col-lg-3
                 / /.col-lg-4
                 .row.col-lg-6{:style => "padding-top:50px"}
-                  %img.img-responsive{:alt => "some_text", :src => "/images/PDL_top.png"}/
+                  <img class="img-responsive" src="{% editable_file PDL_top %}/samples/pages/PDL_top.png{% endeditable_file %}" alt="" />
+                  
                   .col-md-12
                     .text-center{:style => "margin-top: 10px; "}
                       %p{:style => "font-family: Raleway;font-size: 21px;"}
+                        {% editable_text title%}
                         %b
                           Join the intersection
-                          = succeed "of" do
-                            %br/
+                          %br/
+                          of Big Data and Product Information Management
+                        {% endeditable_text %}
                   .col-md-offset-5{:style => "padding-bottom: 30px"}
                     %button#upSignUp.btn.btn-lg.btn-signin.btn-join.text-center{"data-target" => "#signup", "data-toggle" => "modal", :href => "#"} Sign up
                 / /.col-lg-4
@@ -79,11 +82,11 @@ handle: home
               .row{:style => "padding-bottom: 10px; padding-top: 50px;"}
                 .col-lg-8.col-md-offset-2
                   .col-lg-4
-                    <img class="img-responsive" src="{{ 'PDL_Why.png' | theme_image_url }}" alt="" />
+                    <img class="img-responsive" src="{% editable_file PDL_Why %}/samples/pages/PDL_Why.png{% endeditable_file %}" alt="" />
                   .col-lg-8
                     .home-block
                       .panel-heading.padding-left-0
-                        {% editable_text head1%}
+                        {% editable_text head_1%}
                         %b Why choose Product Data Lake?
                         {% endeditable_text %}
                       .panel-body.padding-left-0
@@ -98,28 +101,39 @@ handle: home
                   .col-lg-4
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text reason_head_1%}                   
                         %b Shoppers turns away from bad product information
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text reason_body_1%} 
                         A survey made by the Danish E-commerce Association (FDIH) showed that 81% of shoppers will leave a web-shop with incomplete product information or poor
                         product images.
                         %br/
                         %br/
                         The root cause of incomplete product information and images is lack of agile and process driven sharing of this in business eco-systems. The remedy to that is
                         e Product Data Lake.
+                        {% endeditable_text %}
                   .col-lg-4
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text reason_head_2%}  
                         %b Emerging new technologies can help
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text reason_body_2%} 
                         The data lake concept is, in its original form, a concept for mainly analytical use of big data within an enterprise. The Product Data Lake takes this modern technology concept into the space of sharing product data between trading partners.
                         %br/
                         %br/
                         By doing that, the Product Data Lake solves major business issues: It is a single trusted service where businesses can share consistent product data and tackle data quality challenges and share the burden of software licenses.
+                        {% endeditable_text %}
                   .col-lg-4
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text reason_head_3%} 
                         %b Supporting cross company data supply chains
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text reason_body_3%} 
                         Three main kind of parties participates in the Product Data Lake:
                         %br/
                         %li
@@ -132,37 +146,49 @@ handle: home
                         %li
                           %b> Reservoirs:
                           Service providers that host collections of product data within a given industry and/or geography, or for a given purpose.
+                        {% endeditable_text %}  
               .row{:style => "padding-bottom: 10px"}
                 .col-lg-8.col-md-offset-2
                   .col-lg-8
                     .home-block
                       .panel-heading.padding-left-0
+                        {% editable_text head_2%}
                         %b What is Product Data Lake?
+                        {% endeditable_text %}
                       .panel-body.padding-left-0
+                        {% editable_text body_2%}
                         %p The Product Data Lake is a cloud service for sharing product data in the business ecosystems of manufacturers, distributors, retailers and end users of product information.
+                        {% endeditable_text %}
                         %a#what-is-this-icon{"data-toggle" => "page", :onclick => "showWhat()", :style => "cursor: pointer;"}
                           %i.lnr.lnr-plus-circle
                           Learn More
                   .col-lg-4
-                    %img.img-responsive{:alt => "some_text", :src => "/images/PDL_What.png"}/
+                    <img class="img-responsive" src="{% editable_file PDL_What %}/samples/pages/PDL_What.png{% endeditable_file %}" alt="" />
               #what-is-this.row.detail-landing{:style => "display: none;"}
                 .col-lg-8.col-md-offset-2
                   .col-lg-4
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text what_is_head_1%} 
                         %b A new solution to product data exchange
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text what_is_body_1%} 
                         Product Data Lake is a cloud-based solution utilized by both the trading partner that provides product data and the trading partner that receives the product data.
                         %br/
                         %br/
                         Subscribing parties and reservoirs make partnerships in the Product Data Lake. Products, attributes and digital assets can be shared with all partners or with a
                         specific partner. The Product Data Lake will catch new product data updates from an upstream partner, link and, if necessary, transform the data and distribute the
                         product data to downstream partners.
+                        {% endeditable_text %}
                   .col-lg-4
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text what_is_head_2%} 
                         %b Emphasis on product data quality
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text what_is_body_2%} 
                         The Product Data Lake is built to ensure:
                         %br/
                         %li
@@ -180,11 +206,15 @@ handle: home
                         %li
                           %b> Accuracy
                            of product information by ensuring transparency of product information across the supply chain.
+                        {% endeditable_text %}
                   .col-lg-4
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text what_is_head_3%} 
                         %b Multiple ways of exchanging product information
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text what_is_body_3%} 
                         Uploading data to the Product Data Lake upstream is done by using hot folders on FTP sites, by importing files inside the Product Data Lake or by manually typing and twisting data in the Product Data Lake user interface.
                         %br/
                         %br/
@@ -192,16 +222,21 @@ handle: home
                         %br/
                         %br/
                         All attribute values can be uploaded and downloaded represented in a given culture, which is a combination of a country and a language. Different character sets for upload and download is available too.
+                        {% endeditable_text %}
               .row{:style => "padding-bottom: 10px"}
                 .col-lg-8.col-md-offset-2
                   .col-lg-4
-                    %img.img-responsive{:alt => "some_text", :src => "/images/PDL_How_it_works.png"}/
+                    <img class="img-responsive" src="{% editable_file PDL_How_it_works %}/samples/pages/PDL_How_it_works.png{% endeditable_file %}" alt="" />
                   .col-lg-8
                     .home-block
                       .panel-heading
+                        {% editable_text head_3%} 
                         %b How it works?
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text body_3%} 
                         %p A data lake is a concept with growing popularity related to big data. A data lake focuses less on predefined standards but makes variant use of data by the time needed possible. The Product Data Lake is born within a modern data management approach.
+                        {% endeditable_text %}
                         %a#how-it-work-icon{"data-toggle" => "page", :onclick => "showHowIt()", :style => "cursor: pointer;"}
                           %i.lnr.lnr-plus-circle
                           Learn More
@@ -210,8 +245,11 @@ handle: home
                   .col-lg-4
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text How_head_1%} 
                         %b Providing product information to your partners
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text How_body_1%} 
                         For upstream subscribers the Product Data Lake covers the following business processes:
                         %br/
                         %li When you introduce new products to the market, you make the related product data and digital assets available to your downstream partners in one uniform way.
@@ -220,11 +258,15 @@ handle: home
                         %li When you update your product data and related digital assets, you have a fast and seamless way of pushing it to your downstream partners.
                         %li When you introduce a new product data attribute or digital asset type, you have a fast and seamless way of pushing it to your downstream partners.
                         %li An upstream provider may push product data and digital assets from several different internal sources.
+                        {% endeditable_text %}
                   .col-lg-4
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text How_head_2%} 
                         %b Receiving product information from your partners
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text How_body_2%} 
                         For downstream subscribers the Product Data Lake covers the following business processes:
                         %br/
                         %li When you engage with a new upstream partner you have the means to fast and seamless link and transform  product data and digital assets for the agreed range from the upstream partner.
@@ -232,11 +274,15 @@ handle: home
                         %li When your upstream partners updates their product data and related digital assets, you are able to receive the updated product data and digital assets instantly and effortless.
                         %li When you introduce a new product data attribute or digital asset type, you have a fast and seamless way of pulling it from your upstream partners.
                         %li If you have a backlog of product data and digital asset collection with your upstream partners, the Product Data Lake is the fastest and most cost effective approach to backfill the gap.
+                        {% endeditable_text %}
                   .col-lg-4
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text How_head_3%} 
                         %b Documentation
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text How_body_3%} 
                         For a picture of the steps involved in joining Product Data Lake and when to use the below documentation, please read the
                         = succeed "." do
                           %a{:href => "https://liliendahl.files.wordpress.com/2016/11/pdl-track-to-excellence-1-1.pdf", :target => "_blank"} Product Data Lake Track to Excelience
@@ -260,26 +306,34 @@ handle: home
                         = succeed "." do
                           %a{:href => "https://liliendahl.files.wordpress.com/2016/09/product-data-lake-terms-of-service-and-privacy-policy-201609.pdf", :target => "_blank"} Terms of Service and Privacy Policy
                         %br/
+                        {% endeditable_text %}
               .row{:style => "padding-bottom: 10px"}
                 .col-lg-8.col-md-offset-2
                   .col-lg-8
                     .home-block
                       .panel-heading.padding-left-0
+                        {% editable_text head_4%}
                         %b How much?
+                        {% endeditable_text %}
                       .panel-body.padding-left-0
+                        {% editable_text body_4%}
                         %p Subscription to the Product Data Lake is available on a range of levels starting from an inexpensive small subscription with only one trading partner and a few thousand products over medium and larger subscriptions.
+                        {% endeditable_text %}
                         %a#how-much-icon{"data-toggle" => "page", :onclick => "showHowMuch()", :style => "cursor: pointer;"}
                           %i.lnr.lnr-plus-circle
                           Learn More
                   .col-lg-4
-                    %img.img-responsive{:alt => "some_text", :src => "/images/PDL_How_Much.png"}/
+                    <img class="img-responsive" src="{% editable_file PDL_How_Much %}/samples/pages/PDL_How_Much.png{% endeditable_file %}" alt="" />
               #how-much.row.detail-landing{:style => "display: none;"}
                 .col-lg-8.col-md-offset-2
                   .col-lg-6
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text how_much_head_1%}
                         %b Levels of subscription
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text how_much_body_1%}
                         %table.table.table-bordered.text-right
                           %tr
                             %th.text-center Level
@@ -329,11 +383,15 @@ handle: home
                             %td 2,000,000
                             %td 4,000,000
                             %td 60
+                        {% endeditable_text %}
                   .col-lg-6
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text how_much_head_2%}
                         %b Yearly fees in selected currencies
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text how_much_body_2%}
                         %table.table.table-bordered.text-right
                           %tr
                             %th.text-center Level
@@ -383,16 +441,21 @@ handle: home
                             %td 100,000
                             %td 150,000
                             %td 1.000.000
+                          {% endeditable_text %}
               .row
                 .col-lg-8.col-md-offset-2
                   .col-lg-4
-                    %img.img-responsive{:alt => "some_text", :src => "/images/PDL_How_About_You.png"}/
+                    <img class="img-responsive" src="{% editable_file PDL_How_About_You %}/samples/pages/PDL_How_About_You.png{% endeditable_file %}" alt="" />
                   .col-lg-8
                     .home-block
                       .panel-heading
+                        {% editable_text head_5%}
                         %b How about you?
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text body_5%}
                         %p As a subscriber to the Product Data Lake you can manage your relationship with your trading partners and link your common products, their attributes and digital assets.
+                        {% endeditable_text %}
                         %a#how-about-you-icon{"data-toggle" => "page", :onclick => "showHowAbout()", :style => "cursor: pointer;"}
                           %i.lnr.lnr-plus-circle
                           Learn More
@@ -401,29 +464,41 @@ handle: home
                   .col-lg-4
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text how_about_head_1%}
                         %b Become a Product Data Lake subscriber
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text how_about_body_1%}
                         Subscribers can be:
                         %br/
                         %li Upstream, typically as a manufacturer or upstream distributor
                         %li Downstream, typically as downstream distributor, retailer or end user.
                         %li Midstream (both upstream and downstream) as a midstream distributor or being upstream for some products as a manufacturer of direct finished products and downstream for raw materials and indirect goods.
+                        {% endeditable_text %}
                   .col-lg-4
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text how_about_head_2%}
                         %b Become a Product Data Lake ambassador
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text how_about_body_2%}
                         As an ambassador, you will:
                         %br/
                         %li Have the opportunity to work with a big data solution within Product Information Management.
                         %li Have the opportunity to make integration services and offer other services to subscribers in a whole supply ecosystem.
                         %li Take care of the commercial and/or technical issues for subscribers to the Product Data Lake.
+                        {% endeditable_text %}
                   .col-lg-4
                     .home-block
                       .panel-heading.text-center
+                        {% editable_text how_about_head_3%}
                         %b Become a Product Data Lake reservoir
+                        {% endeditable_text %}
                       .panel-body
+                        {% editable_text how_about_body_3%}
                         The Product Data Lake is a unique opportunity for service providers with product data portfolios for utilizing modern data management technology and offer a comprehensive way of collecting and distributing product data within the business processes used by subscribers.
+                        {% endeditable_text %}
               / /.index.html
               .col-md-2.text-center.col-md-offset-5
                 .text-center
@@ -431,24 +506,24 @@ handle: home
                     %b Get started now
               .col-md-2.text-center.col-md-offset-5
                 %button.btn.btn-lg.btn-signin.btn-join.text-center{"data-target" => "#signup", "data-toggle" => "modal", :href => "#", :style => "margin-top: 0px;"} Sign up
-            #reason-of-being.panel-body.page-content{:style => "display:none;"}
-              %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/reason-of-being.html", :width => "100%"}
-                Sorry your browser does not support inline frames
-            #what-is-this.panel-body.page-content{:style => "display:none;"}
-              %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/what-is-it.html", :width => "100%"}
-                Sorry your browser does not support inline frames
-            #how-it-work.panel-body.page-content{:style => "display:none;"}
-              %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/how-it-work.html", :width => "100%"}
-                Sorry your browser does not support inline frames
-            #how-much.panel-body.page-content{:style => "display:none;"}
-              %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/how-much.html", :width => "100%"}
-                Sorry your browser does not support inline frames
-            #how-about-you.panel-body.page-content{:style => "display:none;"}
-              %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/how-about-you.html", :width => "100%"}
-                Sorry your browser does not support inline frames
-            #news.panel-body.page-content{:style => "display:none;"}
-              %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/news.html", :width => "100%"}
-                Sorry your browser does not support inline frames
+            / #reason-of-being.panel-body.page-content{:style => "display:none;"}
+            /   %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/reason-of-being.html", :width => "100%"}
+            /     Sorry your browser does not support inline frames
+            / #what-is-this.panel-body.page-content{:style => "display:none;"}
+            /   %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/what-is-it.html", :width => "100%"}
+            /     Sorry your browser does not support inline frames
+            / #how-it-work.panel-body.page-content{:style => "display:none;"}
+            /   %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/how-it-work.html", :width => "100%"}
+            /     Sorry your browser does not support inline frames
+            / #how-much.panel-body.page-content{:style => "display:none;"}
+            /   %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/how-much.html", :width => "100%"}
+            /     Sorry your browser does not support inline frames
+            / #how-about-you.panel-body.page-content{:style => "display:none;"}
+            /   %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/how-about-you.html", :width => "100%"}
+            /     Sorry your browser does not support inline frames
+            / #news.panel-body.page-content{:style => "display:none;"}
+            /   %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/news.html", :width => "100%"}
+            /     Sorry your browser does not support inline frames
         / /.content
       / %footer
       /   .row.footer.navbar-blue.footer-bottom{:style => "color:white"}
@@ -1784,9 +1859,9 @@ handle: home
               %span{"aria-hidden" => "true"} ×
               %span.sr-only Close
             %h4.modal-title.modal-header-bg Terms of service and privacy policy
-          .modal-body{:style => "max-height: 68.6vh; overflow-y: auto;margin-bottom: 30px;"}
-            %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/terms.html", :width => "100%"}
-              Sorry your browser does not support inline frames
+          / .modal-body{:style => "max-height: 68.6vh; overflow-y: auto;margin-bottom: 30px;"}
+          /   %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/terms.html", :width => "100%"}
+          /     Sorry your browser does not support inline frames
           .modal-footer
             .text-center
               .col-md-12
@@ -1811,49 +1886,39 @@ handle: home
         / /.modal-content
       / /.modal-dialog
     / ./wrapper
+    / :javascript
+    /   var signInUrl = "/users/sign_in";
+    /   var createPartyUrl = "/parties/create";
+    /   var checkPartyUrl = "/parties/check_party";
+    /   var checkParty1Url = "/parties/check_party1";
+    /   var createPartyOnlyUrl = "/parties/create_without_profile";
+    /   var resetPassUrl = "/users/password";
+    /   var sendEmailUrl = "/users/password";
+    /   var landingGetInfoUrl = "/landing/get_info"
+    
     :javascript
-      var signInUrl = "/users/sign_in";
-      var createPartyUrl = "/parties/create";
-      var checkPartyUrl = "/parties/check_party";
-      var checkParty1Url = "/parties/check_party1";
-      var createPartyOnlyUrl = "/parties/create_without_profile";
-      var resetPassUrl = "/users/password";
-      var sendEmailUrl = "/users/password";
-      var landingGetInfoUrl = "/landing/get_info"
-    %script{:charset => "utf-8", :type => "text/javascript"}
-      :cdata
-        $(function () {
-        $.fn.mainLayout.render();
-        $('#side-menu a').each(function(index, elem) {
-        $('#side-menu li').removeClass('active');
-        });
-        
-        function init() {
-        window.addEventListener('scroll', function(e){
-        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-        shrinkOn = 150,
-        header = document.querySelector("header");
-        if (distanceY > shrinkOn) {
-        $('#top-hea').height(75);
-        document.getElementById("navbar-id").innerHTML = '<img src="/images/img/only_logo.png" alt="Only logo" />';
-        } else {
-        $('#top-hea').height(90);
-        document.getElementById("navbar-id").innerHTML = ' <a >  <img src="/images/img/logo_menu.png" alt="Logo menu" /> </a> <a style="color:white; font-size:14px; padding-right: 30px;"> Testing Environment </a>';
-        }
-        });
-        }
-        window.onload = init();
-        function changeState(el) {
-        if (el.readOnly) el.checked=el.readOnly=false;
-        else if (!el.checked) el.readOnly=el.indeterminate=true;
-        }
-        dtOptions = {
-        useCurrent: false,
-        format: "YYYY-MM-DD"
-        }
-        
-        $('[data-provide="datepicker"]').datetimepicker(dtOptions);
-        });
+      $(function () {
+          function init() {
+              window.addEventListener('scroll', function(e){
+                  var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                      shrinkOn = 150,
+                      header = document.querySelector("header");
+                  if (distanceY > shrinkOn) {
+                      $('#top-hea').height(75);
+                      document.getElementById("navbar-id").innerHTML = '<img src="/images/img/only_logo.png" alt="Only logo" />';
+                  } else {
+                      $('#top-hea').height(90);
+                      document.getElementById("navbar-id").innerHTML = ' <a >  <img src="/images/img/logo_menu.png" alt="Logo menu" /> </a> <a style="color:white; font-size:14px; padding-right: 30px;"> Testing Environment </a>';
+                  }
+              });
+          }
+          window.onload = init();
+          function changeState(el) {
+              if (el.readOnly) el.checked=el.readOnly=false;
+              else if (!el.checked) el.readOnly=el.indeterminate=true;
+          }
+      });
+
     #wait.container{:style => "display:none"}
       .content
         .ball

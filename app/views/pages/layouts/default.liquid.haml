@@ -16,15 +16,11 @@ is_layout: false
 
     {{ 'bootstrap.css' | stylesheet_tag }}
     {{ 'application.css' | stylesheet_tag }}
+    {{ 'sb-admin-2.css' | stylesheet_tag }}
 
   %body
-    {% include 'nav' %}
-
-    {% block content %}
-    {% endblock %}
-
-    {% include 'footer' %}
-
+    {{ 'bootstrap.css' | stylesheet_tag }}
+    {{ 'application.css' | stylesheet_tag }}
     {{ 'jquery.min.js' | javascript_tag }}
     {{ 'bootstrap.min.js' | javascript_tag }}
     {{ 'application.js' | javascript_tag }}
@@ -32,3 +28,10 @@ is_layout: false
     {{ 'new.js' | javascript_tag }}
     {{ 'sb-admin-2.css' | stylesheet_tag }}
 
+
+    {% include 'nav' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'footer' %}

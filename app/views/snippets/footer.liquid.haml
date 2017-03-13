@@ -1,12 +1,12 @@
 %footer.footer
-  .row.footer.navbar-blue.footer-bottom{:style => "color: white; position: static; margin-top: 15px;"}
+  .row.footer.navbar-blue.footer-bottom{:style => "color: white; position: static; margin-top: 15px; width: 1920px; "}
     .ft-txt.pull-left Follow us
     .socials.pull-left
       %span
         %a{:href => "https://www.linkedin.com/company/product-data-lake", :target => "_blank"}
-          %img{:alt => "", :src => "/images/icon-linkendin.png"}/
+          <img src="{{ 'icon-linkendin.png' | theme_image_url }}" alt="" />
       %span
         %a{:href => "https://twitter.com/ProductDataLake", :target => "_blank"}
-          %img{:alt => "", :src => "/images/icon-twitter.png"}/
+          <img src="{{ 'icon-twitter.png' | theme_image_url }}" alt="" />
     .cp.pull-right
-      %p{"data-target" => "#addressmodal", "data-toggle" => "modal", :style => "cursor: pointer;"} © 2016 Product Data Lake All rights reserved.
+      %p{"data-target" => "#addressmodal", "data-toggle" => "modal", :style => "cursor: pointer;"} &copy; 2016 Product Data Lake All rights reserved.

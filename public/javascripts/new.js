@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $.i18n.load(App.messages); //load language dictionary
+  //$.i18n.load(App.messages); //load language dictionary
   var ok = true;
   // $.getScript('http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.min.js',function(){
 
@@ -184,7 +184,7 @@ function loading() {
         }, 4000);
     });
   };
-
+/*
   $('#tagPicker').multiselect({
     includeSelectAllOption: true,
     selectAllValue: 'select-all-value',
@@ -197,7 +197,7 @@ function loading() {
         document.getElementById('checkLanguage').style.display = 'none';
       }
     }
-  });
+  });*/
 
   $('#login').on('hide.bs.modal', function(){
     $("#login-form").bootstrapValidator('resetForm', true);
@@ -674,7 +674,7 @@ function checkParty1(){
 
   }
 
-  $('#signup-form')
+  /*$('#signup-form')
   .bootstrapValidator()
   .on('error.form.bv', function(e) {
         var $form     = $(e.target),
@@ -702,7 +702,7 @@ function checkParty1(){
         validator.disableSubmitButtons(false);
         checkParty1();
     });
-
+  */
   
 
 });
