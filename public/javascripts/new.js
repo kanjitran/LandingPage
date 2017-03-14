@@ -294,6 +294,10 @@ function loading() {
     });
   });
 
+  if(window.location.href.indexOf('#login') != -1) {
+    $('#login').modal('show');
+  }
+
   $('#multi-languages').on('change', function () {
     $(".form-control").change( function() {
       flag = true

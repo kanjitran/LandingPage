@@ -10,7 +10,9 @@ is_layout: false
     %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
     //%meta{content: "width=device-width, initial-scale=1", name: "viewport"}
 
-    %title {{ site.name }}
+    %meta{:content => "{{ site.meta_keywords | escape }}", :name => "keywords"}/
+    %meta{:content => "{{ site.meta_description | escape }}", :name => "description"}
+    %title {{ site.seo_title | escape }}
 
     %link{href: "{{ 'favicon.png' | theme_image_url }}", rel: "shortcut icon"}
 
