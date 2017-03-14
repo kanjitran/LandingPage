@@ -15,6 +15,6 @@
             %option{:selected => "selected", :value => "/en"} en-GB/ English - United Kingdom
             %option{:value => "/en"} en-US/ English - United States
     %li
-      %a{"data-href" => "", "data-toggle" => "modal", :href => "#login", :style => "color:white; padding: 0px"}
+      %a{:href => "http://localhost:3000/landing/" +'{{locale}}'+ "#login"}
         %i.false> 
         {{ 'log_in' | translate }}
