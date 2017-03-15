@@ -75,7 +75,7 @@ handle: home
                           of Big Data and Product Information Management
                         {% endeditable_text %}
                   .col-md-offset-5{:style => "padding-bottom: 30px"}
-                    %button#upSignUp.btn.btn-lg.btn-signin.btn-join.text-center{:onclick=> "location.href = 'http://localhost:3000/landing/{{locale}}#signup'"} {{ 'sign_up' | translate }}
+                    %button#upSignUp.btn.btn-lg.btn-signin.btn-join.text-center{:onclick=> "location.href = 'http://172.16.3.25:3333/landing/{{'locales'|translate}}#signup'"} {{ 'sign_up' | translate }}
                 / /.col-lg-4
                 .col-lg-3.home-block-fluid
                 / /.col-lg-4
@@ -505,7 +505,7 @@ handle: home
                   %p
                     %b {{ 'get_started_now' | translate }}
               .col-md-2.text-center.col-md-offset-5
-                %button.btn.btn-lg.btn-signin.btn-join.text-center{:onclick=> "location.href = 'http://localhost:3000/landing/{{locale}}#signup'"} {{ 'sign_up' | translate }}
+                %button.btn.btn-lg.btn-signin.btn-join.text-center{:onclick=> "location.href = 'http://172.16.3.25:3333/landing/{{'locales'|translate}}#signup'"} {{ 'sign_up' | translate }}
             / #reason-of-being.panel-body.page-content{:style => "display:none;"}
             /   %iframe{:frameborder => "0", :noresize => "noresize", :onload => "resizeIframe(this)", :scrolling => "no", :src => "/landing-html/reason-of-being.html", :width => "100%"}
             /     Sorry your browser does not support inline frames
@@ -1905,10 +1905,10 @@ handle: home
                       header = document.querySelector("header");
                   if (distanceY > shrinkOn) {
                       $('#top-hea').height(75);
-                      document.getElementById("navbar-id").innerHTML = '<img src="/images/img/only_logo.png" alt="Only logo" />';
+                      document.getElementById("navbar-id").innerHTML = '<img src="{{ 'img/only_logo.png' | theme_image_url }}" alt="" />';   
                   } else {
                       $('#top-hea').height(90);
-                      document.getElementById("navbar-id").innerHTML = ' <a >  <img src="/images/img/logo_menu.png" alt="Logo menu" /> </a> <a style="color:white; font-size:14px; padding-right: 30px;"> {{ 'testing_environment' | translate }} </a>';
+                      document.getElementById("navbar-id").innerHTML = ' <a >  <img src="{{ 'img/logo_menu.png' | theme_image_url }}" alt="Logo menu" /> </a> <a style="color:white; font-size:14px; padding-right: 30px;"> {{ 'testing_environment' | translate }} </a>';
                   }
               });
           }
@@ -1917,6 +1917,11 @@ handle: home
               if (el.readOnly) el.checked=el.readOnly=false;
               else if (!el.checked) el.readOnly=el.indeterminate=true;
           }
+          var urlmenu = document.getElementById('multi-languages');
+          urlmenu.onchange = function() {
+              $('multi-languages').select()
+              window.location.href = $("#multi-languages option:selected").val();
+          };
       });
 
     #wait.container{:style => "display:none"}
