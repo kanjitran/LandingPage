@@ -589,8 +589,11 @@ handle: home
             %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
               %span{"aria-hidden" => "true"} ×
             %h4.modal-title.modal-header-bg-dun{:style => "padding-top:50px';"}
+            {% editable_text Contact_title%}
             %h4.modal-title Contact product data lake
+            {% endeditable_text %}
           .modal-body
+            {% editable_text Contact_body%}
             %p{:style => " padding-left: 80px;"}
               %b> Address
               \: Product Data Lake ApS
@@ -609,6 +612,7 @@ handle: home
               Phone dk+45 40410528,
               %br/
               Phone uk+44 7472 828 552
+            {% endeditable_text %}
         / /.modal-content
       / /.modal-dialog
     #dummodal.modal.fade{:role => "dialog", :style => "z-index:1000000000"}
@@ -1917,11 +1921,12 @@ handle: home
               if (el.readOnly) el.checked=el.readOnly=false;
               else if (!el.checked) el.readOnly=el.indeterminate=true;
           }
+
           var urlmenu = document.getElementById('multi-languages');
           urlmenu.onchange = function() {
-              $('multi-languages').select()
-              window.location.href = $("#multi-languages option:selected").val();
+              window.location.href = this.options[ this.selectedIndex ].value;
           };
+
       });
 
     #wait.container{:style => "display:none"}

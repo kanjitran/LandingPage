@@ -10,12 +10,11 @@
       %label.col-sm-4.control-label{:for => "", :style => "padding-top: 25px; text-align: right"}{{ 'language' | translate }}
       .col-sm-8{:style => "padding-top: 20px"}
         .input-group
-          //:onchange =>"location = this.value",
           %select#multi-languages.form-control{:name => "multi-languages", :style => "height:35px; width:auto;"}
-            %option{:value => "de"} da-DK/ Danish - Denmark
-            %option{:selected=>"selected",:value => "en"} en-GB/ English - United Kingdom
-            %option{:value => "en"} en-US/ English - United States
+            %option{:value => "da",:selected => ("{{ locale }}" == "da") ? 'selected' : ''} da-DK/ Danish - Denmark                 
+            %option{:selected => ("{{'locales' | translate }}" == 'en') ? 'selected' : '',:value => "en"} en-GB/ English - United Kingdom            
+            %option{:value => "en"} en-US/ English - United States       
     %li
-      %a{:href => "http://172.16.3.25:3333/landing/" + "{{'locales' | translate }}" + "#login", :style => "color:white; padding: 10px"}
+      %a{:href => "http://172.16.3.25:3333/landing/" + "{{'locales' | translate }}" + "#login", :style => "color:white; padding: 10px; text-align: right"}
         %i.false>
         {{ 'log_in' | translate }}
