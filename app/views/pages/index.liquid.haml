@@ -1926,9 +1926,15 @@ handle: home
 
           var urlmenu = document.getElementById('multi-languages');
           urlmenu.value = '{{locale}}'
+          var url = window.location.pathname;
+          var urlsplit = url.split("/").slice(-1)[0];
+          
           urlmenu.onchange = function() {
-              if (this.options[ this.selectedIndex ].value != '{{locale}}')
+            if (this.options[ this.selectedIndex ].value != '{{locale}}')
+              if ((urlsplit== "en") ||(urlsplit== "da")||(urlsplit== ""))
                 window.location.href = this.options[ this.selectedIndex ].value;
+              else
+                window.location.href = url + '/' + this.options[ this.selectedIndex ].value;
           };
 
       });
