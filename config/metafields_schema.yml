@@ -54,3 +54,7 @@
 #       type: select
 #       select_options: ['helvetica', 'Noto']
 
+pdl:
+  label: pdl links
+  fields:
+    - url

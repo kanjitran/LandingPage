@@ -47,3 +47,6 @@ meta_description: "some meta description"
 #   theme:
 #     background_image: "/samples/background.png"
 
+metafields:
+  pdl:
+    url: "http://172.16.9.187:80/landing/"
