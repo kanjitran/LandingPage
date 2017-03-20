@@ -15,6 +15,6 @@
             %option{:selected => 'selected',:value => "en"} en-GB/ English - United Kingdom            
             %option{:value => "en"} en-US/ English - United States       
     %li
-      %a{:href => "{{site.metafields.pdl.url}}" + "{{'locales' | translate }}" + "#login", :style => "color:white; padding: 10px; text-align: right"}
+      %a#logintext{:href => "{{site.metafields.pdl.url}}" + "{{'locales' | translate }}" + "#login", :style => "color:white; padding: 10"}
         %i.false>
         {{ 'log_in' | translate }}

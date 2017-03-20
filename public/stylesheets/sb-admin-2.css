@@ -172,7 +172,7 @@ select.form-control{
     padding-right: 10px;
 }
 
-a[href='#login'] {
+#logintext {
 	margin-top: 20px;
 }
 
