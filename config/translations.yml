@@ -9,32 +9,32 @@
 
 language:
   en: Language
-  de: Sprog
+  da: Sprog
 
 log_in: 
   en: Log In
-  de: Log Ind
+  da: Log Ind
 
 sign_up:
   en: Sign Up 
-  de: Tilmeld
+  da: Tilmeld
 
 testing_environment:
   en: Testing environment 
-  de: Testmiljø
+  da: Testmiljø
 
 follow_us: 
   en: Follow us
-  de: Følg os
+  da: Følg os
 
 all_rights_reserved: 
   en: All Rights Reserved
-  de: Alle rettigheder forbeholdes
+  da: Alle rettigheder forbeholdes
 
 get_started_now: 
   en: Get started now
-  de: Start nu
+  da: Start nu
 
 locales:
   en: en
-  de: de
+  da: da
