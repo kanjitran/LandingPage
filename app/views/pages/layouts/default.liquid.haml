@@ -14,7 +14,7 @@ is_layout: false
     %meta{:content => "{{ site.meta_description | escape }}", :name => "description"}
     %title {{ site.seo_title | escape }}
 
-    %link{href: "{{ 'favicon.png' | theme_image_url }}", rel: "shortcut icon"}
+    %link{href: "{{ 'icon.png' | theme_image_url }}", rel: "shortcut icon", type:"image/x-icon"}
 
     {{ 'bootstrap.css' | stylesheet_tag }}
     {{ 'application.css' | stylesheet_tag }}
